@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class task2 {
+public class Task2 {
     public static void main(String[] args) throws IOException {
         System.out.println("Enter number a, c, b");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
