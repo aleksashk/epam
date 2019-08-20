@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 
 public class Task5 {
     public static void main(String[] args) throws IOException {
-        int size, tempMax, tempMin, temp;
+        int size;
         System.out.print("Введите размерность числовой массива (целое положительное число): ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         size = Integer.parseInt(reader.readLine());
