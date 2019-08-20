@@ -13,7 +13,7 @@ public class Task4 {
 
         //заполнение массива произвольными числами
         for (int i = 0; i < aray.length; i++) {
-            aray[i] = (int)(Math.random() * 101) - 50;
+            aray[i] = (int)(Math.random() * 101);
         }
 
         //нахождение минимального и максимального элементов в массиве
