@@ -5,15 +5,16 @@ import java.io.InputStreamReader;
 
 public class Task4 {
     public static void main(String[] args) throws IOException {
-        int size, tempMax, tempMin, temp;
+        int size, tempMax, tempMin;
+        double temp;
         System.out.print("Введите размерность числовой массива (целое положительное число): ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         size = Integer.parseInt(reader.readLine());
-        int[]aray = new int[size];
+        double[]aray = new double[size];
 
         //заполнение массива произвольными числами
         for (int i = 0; i < aray.length; i++) {
-            aray[i] = (int)(Math.random() * 101);
+            aray[i] = (Math.random() * 101);
         }
 
         //нахождение минимального и максимального элементов в массиве
@@ -28,7 +29,7 @@ public class Task4 {
         }
         System.out.println("Вывод массива");
         System.out.print("aray = [");
-        for (int item : aray) {
+        for (double item : aray) {
             System.out.print( item + ", ");
         }
         System.out.println("\b\b]");
@@ -42,7 +43,7 @@ public class Task4 {
 
         System.out.println("Вывод результирующего массива");
         System.out.print("aray = [");
-        for (int item : aray) {
+        for (double item : aray) {
             System.out.print( item + ", ");
         }
         System.out.print("\b\b]");
