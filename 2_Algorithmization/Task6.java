@@ -1,30 +1,37 @@
 //Задана последовательность n вещественных чисел. Вычислить сумму чисел, порядковые номера которых являются простыми числами.
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Task6 {
     public static void main(String[] args) throws IOException {
-        int size, temp;
-        int summa = 0;
+        int size;
+        double summa = 0;
+        int flag;
         System.out.print("Введите размерность числовой массива (целое положительное число): ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         size = Integer.parseInt(reader.readLine());
-        int[]aray = new int[size];
+        double[]aray = new double[size];
 
         //заполнение массива произвольными числами
         for (int i = 0; i < aray.length; i++) {
-            temp = (int)(Math.random() * 1000);
-            while (temp == 0) {//в случае, если элемент массива равен 0, изменяем его значение
-                temp = (int) (Math.random() * 5000);
-            }
-            aray[i] = temp;
+            aray[i] = Math.random() * 100 - 50;
         }
 
         //вычислиение суммы чисел, порядковые номера которых являются простыми числами
-        for (int i = 0, j = 0; i < aray.length; i++) {
-            if(aray[i] % aray[i] == 0 && aray[i] % 1 == 0){
+        for (int i = 2; i < aray.length; i++) {
+            flag = 0;//создаём флаг, для нахождения простых чисел, если число делится на что-либо, кроме себя, то флаг изменяется и выходим из цикла
+            for (int j = 2; j <= i / 2; j++) {
+                if(i % j == 0){
+                    flag ++;
+                    break;
+                }
+            }
+            if(flag ==0 && i >= 2){//если флаг не в цикле не изменился, то число простое!
+                System.out.println("Индекс " + i + " является простым числом;");
                 summa += aray[i];
             }
         }
