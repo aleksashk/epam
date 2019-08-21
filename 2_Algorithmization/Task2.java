@@ -6,17 +6,18 @@ import java.io.InputStreamReader;
 
 public class Task2 {
     public static void main(String[] args) throws IOException {
-        int size, z;
+        int size;
+        double z;
         int counter = 0;
         System.out.print("Введите размерность числовой последовательности (целое положительное число): ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         size = Integer.parseInt(reader.readLine());
-        int[]aray = new int[size];
-        System.out.print("Задайте число z (целое положительное): ");
-        z = Integer.parseInt(reader.readLine());
+        double[]aray = new double[size];
+        System.out.print("Задайте число z: ");
+        z = Double.parseDouble(reader.readLine());
         //заполнение последовательности произвольными числами
         for (int i = 0; i < aray.length; i++) {
-            aray[i] = (int)(Math.random() * 100) + 1;
+            aray[i] = (Math.random() * 100) - 50;
         }
         //перебор массива и замена с подсчётом элементов, больше z
         for (int i = 0; i < aray.length; i++) {
@@ -25,10 +26,12 @@ public class Task2 {
                 counter ++;
             }
         }
+        System.out.println("Количество замен составило: " + counter);
         //вывод итогового массива
-        System.out.print("aray = [");
-        for (int item : aray) {
-            System.out.print(item + ", ");
+        System.out.println("Вид итогового массива: ");
+        System.out.print("aray = [\n");
+        for (double item : aray) {
+            System.out.println("\t\t" + item + ", ");
         }
         System.out.print("\b\b]");
     }
