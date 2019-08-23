@@ -5,7 +5,9 @@ import java.io.InputStreamReader;
 
 public class Task19 {
     public static void main(String[] args) throws IOException {
-        int n, m;
+        int n, m, index;
+        double maxSum;
+
         System.out.print("Задайте m (количество строк матрицы): ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         m = Integer.parseInt(reader.readLine());
@@ -39,5 +41,14 @@ public class Task19 {
         for (int i = 0; i < n; i++) {
             System.out.println("сумма элементов " + i + " столбца матрицы aray составила: " + sumAray[i] + ";");
         }
+        maxSum = sumAray[0];
+        index = 0;
+        for (int i = 0; i < sumAray.length; i++) {
+            if(sumAray[i] > maxSum){
+                maxSum = sumAray[i];
+                index = i;
+            }
+        }
+        System.out.println("Максимальную сумму элементов содержит " + index + " столбец матрицы aray. Сумма элементов в столбце составила: " + maxSum + ";");
     }
 }
