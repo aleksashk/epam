@@ -57,16 +57,10 @@ public class Task18 {
                 secondNumber = Integer.parseInt(reader.readLine());
             }
         }
-        //записываем элементы первого столбца во временный массив, для последующго изменения позиции столбцов
+        System.out.println("Столбец №" + firstNumber + ":");
         for (int i = 0; i < m; i++) {
             for (int j = 0; j <= 0; j++) {
-                tempAray[i][j] = aray[i][firstNumber];
-            }
-        }
-        System.out.println("Столбец №" + firstNumber + ":");
-        for (int[] es : tempAray) {
-            for (int e : es) {
-                System.out.println(e + ";");
+                System.out.println(aray[i][firstNumber] + ";");
             }
         }
         System.out.println(" поменять местами со столбцом №" + secondNumber + ":");
@@ -78,8 +72,9 @@ public class Task18 {
         //изменение позиций выбранных столбцов
         for (int i = 0; i < m; i++) {
             for (int j = 0; j <= 0; j++) {
+                tempAray[i][j] = aray[i][firstNumber];
                 aray[i][firstNumber] = aray[i][secondNumber];
-                aray[i][secondNumber] = tempAray[i][firstNumber];
+                aray[i][secondNumber] = tempAray[i][j];
             }
         }
         System.out.println("Итоговая матрица имеет вид aray[" + m + "][" + n + "] = ");
