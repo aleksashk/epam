@@ -37,14 +37,20 @@ public class Main {
 
     public static void sortArray(int[] m) {
         int counter = 0;
+        boolean flag;
         for (int k = 0; k < m.length; k++) {
-            for (int i = 0, j = 1; i < m.length - 1; i++, j++) {
+            flag = true;
+            for (int i = 0, j = 1; i < m.length - 1 - k; i++, j++) {
                 if (m[i] > m[j]) {
                     int temp = m[i];
                     m[i] = m[j];
                     m[j] = temp;
-                    counter++;
+                    flag = false;
                 }
+                counter++;
+            }
+            if(flag){
+                break;
             }
         }
         System.out.println("counter = " + counter);
